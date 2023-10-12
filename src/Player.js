@@ -18,9 +18,6 @@ export default class Player {
 
 
     update(deltaTime) {
-        if (this.shootTimer > 0) {
-            this.
-        }
         
         
         
@@ -55,7 +52,7 @@ export default class Player {
     }
     
 
-
+    
     draw(context) {
         context.fillStyle = '#f00';
         context.fillRect(this.x, this.y, this.width, this.height)
@@ -64,8 +61,9 @@ export default class Player {
         })
     }
     shoot() {
+       
         this.Projectile.push(
             new Projectile(this.game, this.x + this.width, this.y + this.height/2)
-        )
+            )
     }
 }
