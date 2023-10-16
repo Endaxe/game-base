@@ -56,6 +56,12 @@ export default class Player {
     draw(context) {
         context.fillStyle = '#f00';
         context.fillRect(this.x, this.y, this.width, this.height)
+        if (this.game.debug) {
+            context.strokeRect(this.x, this.y, this.width, this.height)
+            context.fillStyle = 'black'
+            context.font = '12px, arial'
+            context.fillText(this.frameX, this.x, this.y - 5)
+        }
         this.Projectile.forEach((Projectile) => {
         Projectile.draw(context)
         })

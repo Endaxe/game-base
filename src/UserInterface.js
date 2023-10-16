@@ -1,11 +1,12 @@
 export default class UserInterface {
-    constructor (game) {
+    constructor(game) {
         this.game = game
+        this.inputhandler = this.inputhandler
         this.fontSize = 25
         this.fontFamily = 'Arial'
         this.color = 'white'
     }
-    
+
     draw(context) {
         context.save()
         context.fillStyle = this.color
@@ -16,18 +17,23 @@ export default class UserInterface {
         context.textAlign = 'left'
         context.font = `${this.fontSize}px ${this.fontFamily}`
         context.fillText(
-            `Time: ${(this.game.gameTime * 0.001).toFixed(1)}`,20,100
-            )
-        }
+            `Time: ${(this.game.gameTime * 0.001).toFixed(1)}`, 20, 100
+            
+            
+        )
 
-            if(this.game.gameOver) {
-                context.textAlign = 'center'
-                context.font = `50px ${this.fontFamily}`
-                context.fillText (
-                    'Game Ovah!',
-                    this.game.width / 2
+        if (this.game.gameOver) {
+            context.textAlign = 'center'
+            context.font = `50px ${this.fontFamily}`
+            context.fillText(
+                'Game Ovah!',
+                this.game.width / 2,
                     this.game.height / 2 - 20
-                )
+            )
 
+         }
+        if (this.game.debug){
+            context.restore()
+        }
     }
 }

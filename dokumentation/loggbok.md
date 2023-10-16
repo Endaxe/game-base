@@ -30,3 +30,16 @@ Fast mer fokuserad på text och font
 Så skrev in vad fonten ska vara, vilken storlek och färg.
 Sedan i draw så säger koden åt den och rita ut det genom att filla det och berätta X och Y offset.
 //till nästa fixa if loopen för 'game over'
+
+## 2023-10-16
+Uppstart:
+Lämnade av arbete i steg 6 och justerade i input klassen.
+Idag ska jag åtminstone slutföra steg 6 vilket är USerInterface
+
+//Valde att inte göra något extra den här gången på interface för det används inte förrän nästa steg, lägger till då.
+
+Gjorde klart resterande av steg 6 vilket var att fixa måsvingar för att this.game kunde inte hittas.
+Lägga till klassen i draw i Game.js.
+Påbörjade Enemy smått med att Skapa en Enemy.js och lägga till grunderna som  constructor för den och draw + update.
+
+//nästa fortsätta med koden och hinna med att göra någon feature.
