@@ -43,3 +43,11 @@ Lägga till klassen i draw i Game.js.
 Påbörjade Enemy smått med att Skapa en Enemy.js och lägga till grunderna som  constructor för den och draw + update.
 
 //nästa fortsätta med koden och hinna med att göra någon feature.
+
+## 2023-10-19
+
+Gjorde klart grunderna med enemies genom att skapa en ny klass för den induviduella fienden vilket fivk vara en krokodil. SÅ skapade en crocodile.js där den innehöll vars den skulle läggas in hastigheten med random så att alla åker me dolika hastigheter.
+I game klassen sedan så importerades koden därifrån och sa till när dem skulle läggas till och rita ut dem
+
+Gick bra:
+Löste problemet att fiender bara syntes om man tryckte på knappen d, då tänkte jag att det är ju knappen för debug. Då såg jag att draw för fienderna var i debug satsen så tog bara ut den och det funka.

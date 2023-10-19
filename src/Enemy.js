@@ -1,5 +1,5 @@
 export default class Enemy {
-    constructor (game) {
+    constructor(game) {
         this.game = game
         this.x = 0
         this.y = 0
@@ -7,12 +7,16 @@ export default class Enemy {
         this.markedForDetection = false
     }
 
-    update () {
+    update() {
         this.x += this.speedX
         if (this.x < 0) this.markedForDetection = true
     }
     draw(context) {
         context.fillStyle = '#0f0'
-        
+        context.fillRect(this.x, this.y, this.width, this.height)
+        if (this.game.debug) {
+
+        }
     }
+
 }
