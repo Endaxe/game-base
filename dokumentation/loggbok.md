@@ -51,3 +51,10 @@ I game klassen sedan så importerades koden därifrån och sa till när dem skul
 
 Gick bra:
 Löste problemet att fiender bara syntes om man tryckte på knappen d, då tänkte jag att det är ju knappen för debug. Då såg jag att draw för fienderna var i debug satsen så tog bara ut den och det funka.
+
+
+## 2023-10-23
+
+Idag så påbörjade jag på själva mario platformen som innehöll både hitbox och plattformar.
+Genom att göra en platform.js så kunde jag lägga in värde för platformens position och vars den ska ritas ut. Sedan i Game klassen så skrev man in hur många som skulle ritas ut och vad som händer med spelaren om den träffar platformen (kollision). Hann fixa mark och en platform och så att spelaren kan hoppa.
+

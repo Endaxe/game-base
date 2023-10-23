@@ -1,4 +1,4 @@
-import  Projectile from "./Projectile.js";
+import Projectile from "./Projectile.js";
 
 export default class Player {
     constructor(game) {
@@ -11,48 +11,48 @@ export default class Player {
         this.x = 50;
         this.y = 100;
 
-        this.speedX = 1
+        this.speedX = 0
         this.speedY = 0
         this.maxspeed = 5
+        this.jumpSpeed = 15
+        this.grounded = false
     }
 
 
     update(deltaTime) {
-        
-        
-        
-        if (this.game.keys.includes('ArrowUp')) {
-            this.speedY = -this.maxspeed;
-        } else if (this.game.keys.includes('ArrowDown')) {
-            this.speedY = this.maxspeed;
-        } else {
-            this.speedY = 0;
-            
-        }
-        
-        this.y += this.speedY
-        
-        if (this.game.keys.includes('ArrowLeft')) {
-            this.speedX = -this.maxspeed;
-        } else if (this.game.keys.includes('ArrowRight')) {
-            this.speedX = this.maxspeed;
-        } else {
-            this.speedX = 0;
-            
-        }
-        
-        
-        this.x += this.speedX
-        this.Projectile.forEach((Projectile) => {
-            Projectile.update()
-        })
-        this.Projectile = this.Projectile.filter(
-            (Projectile) => !Projectile.markedForDeletion
-        )
-    }
-    
 
+        if (this.game.keys.includes('ArrowLeft')) {
+            this.speedX = -this.maxSpeed
+          } else if (this.game.keys.includes('ArrowRight')) {
+            this.speedX = this.maxSpeed
+          } else {
+            this.speedX = 0
+          }
+      
+          if (this.game.keys.includes('ArrowUp') && this.grounded) {
+            this.speedY = -this.jumpSpeed
+            this.grounded = false
+          }
+      
+          if (this.grounded) {
+            this.speedY = 0
+          } else {
+            this.speedY += this.game.gravity
+          }
+            
+          this.y += this.speedY
+          this.x += this.speedX
     
+            this.Projectile.forEach((Projectile) => {
+                Projectile.update()
+            })
+            this.Projectile = this.Projectile.filter(
+                (Projectile) => !Projectile.markedForDeletion
+                )
+    }
+
+
+
     draw(context) {
         context.fillStyle = '#f00';
         context.fillRect(this.x, this.y, this.width, this.height)
@@ -61,15 +61,16 @@ export default class Player {
             context.fillStyle = 'black'
             context.font = '12px, arial'
             context.fillText(this.frameX, this.x, this.y - 5)
+            context.fillText(this.grounded, this.x + 20, this.y - 5)
         }
         this.Projectile.forEach((Projectile) => {
-        Projectile.draw(context)
+            Projectile.draw(context)
         })
     }
     shoot() {
-       
+
         this.Projectile.push(
-            new Projectile(this.game, this.x + this.width, this.y + this.height/2)
-            )
+            new Projectile(this.game, this.x + this.width, this.y + this.height / 2)
+        )
     }
 }
