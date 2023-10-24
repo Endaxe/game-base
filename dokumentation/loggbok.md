@@ -58,3 +58,10 @@ Löste problemet att fiender bara syntes om man tryckte på knappen d, då tänk
 Idag så påbörjade jag på själva mario platformen som innehöll både hitbox och plattformar.
 Genom att göra en platform.js så kunde jag lägga in värde för platformens position och vars den ska ritas ut. Sedan i Game klassen så skrev man in hur många som skulle ritas ut och vad som händer med spelaren om den träffar platformen (kollision). Hann fixa mark och en platform och så att spelaren kan hoppa.
 
+## 2023-10-24
+
+Detta lektion var för att felsöka koderna som inte funka, inkluderande kunde inte röra sig höger och vänster utan att försvinna och debugg tiden visades inte. Lyckades fixa båda idag. 
+
+Tiden funkade inte för att i game.js så hade jag inte en variable som sa att den skulle börja/existera.
+För att röra sig till sidorna så hade jag inte frameX så de försvann...............
+

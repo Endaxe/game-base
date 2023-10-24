@@ -4,10 +4,13 @@ import UserInterface from "./UserInterface.js";
 import Crocodile from "./Crocodile.js";
 import Enemy from "./Enemy.js";
 import Platform from "./Platform.js";
+
 export default class Game {
   constructor(width, height) {
     this.height = height
     this.width = width
+
+    this.gameTime = 0
 
     this.player = new Player(this)
     this.input = new InputHandler(this)
@@ -30,10 +33,6 @@ export default class Game {
       new Platform(this, this.width - 200, 280, 200, 20),
       new Platform(this, 200, 200, 300, 20),
     ]
-
-
-
-
 
   }
 

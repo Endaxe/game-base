@@ -17,10 +17,11 @@ export default class UserInterface {
         context.textAlign = 'left'
         context.font = `${this.fontSize}px ${this.fontFamily}`
         context.fillText(
-            `Time: ${(this.game.gameTime * 0.001).toFixed(1)}`, 20, 100
-            
-            
+            `Time: ${(this.game.gameTime * 0.001).toFixed(1)}`, 
+            20,
+             100
         )
+        
 
         if (this.game.gameOver) {
             context.textAlign = 'center'

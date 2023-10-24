@@ -8,12 +8,14 @@ export default class Player {
         this.width = 32;
         this.height = 64;
 
+        this.frameX = 0
+
         this.x = 50;
         this.y = 100;
 
         this.speedX = 0
         this.speedY = 0
-        this.maxspeed = 5
+        this.maxSpeed = 5
         this.jumpSpeed = 15
         this.grounded = false
     }
@@ -43,6 +45,7 @@ export default class Player {
           this.y += this.speedY
           this.x += this.speedX
     
+
             this.Projectile.forEach((Projectile) => {
                 Projectile.update()
             })
@@ -56,6 +59,10 @@ export default class Player {
     draw(context) {
         context.fillStyle = '#f00';
         context.fillRect(this.x, this.y, this.width, this.height)
+        this.Projectile.forEach((Projectile) => {
+            Projectile.draw(context)
+        })
+      
         if (this.game.debug) {
             context.strokeRect(this.x, this.y, this.width, this.height)
             context.fillStyle = 'black'
@@ -63,9 +70,6 @@ export default class Player {
             context.fillText(this.frameX, this.x, this.y - 5)
             context.fillText(this.grounded, this.x + 20, this.y - 5)
         }
-        this.Projectile.forEach((Projectile) => {
-            Projectile.draw(context)
-        })
     }
     shoot() {
 
