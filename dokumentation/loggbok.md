@@ -65,3 +65,8 @@ Detta lektion var för att felsöka koderna som inte funka, inkluderande kunde i
 Tiden funkade inte för att i game.js så hade jag inte en variable som sa att den skulle börja/existera.
 För att röra sig till sidorna så hade jag inte frameX så de försvann...............
 
+## 2023-11-06
+
+Fixade Keypress som fastna
+alla inputs i inputhandlerna var i sina egna grupper, tog bort parenteserna
+

@@ -30,6 +30,8 @@ export default class Player {
           } else {
             this.speedX = 0
           }
+
+          
       
           if (this.game.keys.includes('ArrowUp') && this.grounded) {
             this.speedY = -this.jumpSpeed
@@ -57,7 +59,7 @@ export default class Player {
 
 
     draw(context) {
-        context.fillStyle = '#f00';
+        context.fillStyle = '#FFFFFF';
         context.fillRect(this.x, this.y, this.width, this.height)
         this.Projectile.forEach((Projectile) => {
             Projectile.draw(context)

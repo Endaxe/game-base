@@ -2,7 +2,7 @@ export default class Projectile {
     constructor(game, x, y) {
         this.game = game
         this.width = 10
-        this. height = 10
+        this. height = 5
         this.x = x
         this.y = y
 
