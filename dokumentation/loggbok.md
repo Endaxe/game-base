@@ -67,6 +67,9 @@ För att röra sig till sidorna så hade jag inte frameX så de försvann.......
 
 ## 2023-11-06
 
-Fixade Keypress som fastna
-alla inputs i inputhandlerna var i sina egna grupper, tog bort parenteserna
+Idag fixade Keypress som fastna. När man höll i en tangent så trodde inputen att den fortfarande hölls in så det fortsatte oändligt. Detta hände för att alla inputs i inputhandlerna var i sina egna grupper, så dem induviduella fortsatte bara istället för att reseta. Enkel lösning: tog bort parenteserna.
 
+
+## 2023-11-06
+
+Skrev klart resterande av planeringen och påbörjat på att fixa en kamera som ska följa spelaren x och y kordinaterna. Har skapat en Camera.js klass som innehåller information om hur den ska följa player. I game.js la jag till att camera ska importeras och lade till dem som variable this.camera =... osv.

@@ -4,20 +4,29 @@ import UserInterface from "./UserInterface.js";
 import Crocodile from "./Crocodile.js";
 import Enemy from "./Enemy.js";
 import Platform from "./Platform.js";
+import Camera from "./Camera.js";
 
 export default class Game {
   constructor(width, height) {
     this.height = height
     this.width = width
 
+
+
     this.gameTime = 0
 
+    this.camera = new Camera(this, this.player.x, this.player.y, 0, 100)
     this.player = new Player(this)
+   
     this.input = new InputHandler(this)
+    this.enemies = new Enemy(this)
+
     this.userinterface = new UserInterface(this)
+
     this.enemies = []
     this.enemyTimer = 0
     this.enemyInterval = 1000
+
 
     this.keys = []
 
@@ -56,6 +65,11 @@ export default class Game {
         })
       })
     }
+
+    this.player.update(deltaTime)
+    this.camera.update(this.player)
+
+
     if (this.enemyTimer > this.enemyInterval && !this.gameOver) {
       this.addEnemy()
       this.enemyTimer = 0
@@ -73,11 +87,17 @@ export default class Game {
 
 
   draw(context) {
-    this.player.draw(context)
     this.userinterface.draw(context)
+    this.camera.apply(context)
+    this.player.draw(context)
+    this.level.draw(context)
     this.enemies.forEach((enemy) => enemy.draw(context))
     this.platforms.forEach((platform) => platform.draw(context))
+    this.camera.reset(context)
+
   }
+
+
 
   checkPlatformCollision(object, platform) {
     if (
