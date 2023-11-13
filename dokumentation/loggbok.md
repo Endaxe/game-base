@@ -73,3 +73,24 @@ Idag fixade Keypress som fastna. När man höll i en tangent så trodde inputen 
 ## 2023-11-06
 
 Skrev klart resterande av planeringen och påbörjat på att fixa en kamera som ska följa spelaren x och y kordinaterna. Har skapat en Camera.js klass som innehåller information om hur den ska följa player. I game.js la jag till att camera ska importeras och lade till dem som variable this.camera =... osv.
+
+## 2023-11-09
+
+Cameran funkar, saknade delar i koden som behövdes för att den skulle fungera, så lade till dem och justerade så att dem passsade in
+
+Gjorde platform längre vågrätt och så att den fyllar resterande av skärmen neråt.
+
+lade till bilderna i en mapp
+
+## 2023-11-13
+
+jag har börjat lägga till sprites. La till i player klassen. Där bilden importas och ritas ut på spelaren.
+
+ Och TOG BORT PROJECTILES!!
+ Det var impuls och går inte att ångra men den originella ideen behövde inte projektiles hursom.
+
+
+Vad som måste fixas nästa: måste fixa till den så att den passar hitboxenoch storlekarna
+
+
+

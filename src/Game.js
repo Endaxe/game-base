@@ -5,18 +5,20 @@ import Crocodile from "./Crocodile.js";
 import Enemy from "./Enemy.js";
 import Platform from "./Platform.js";
 import Camera from "./Camera.js";
+import Level from "./Level.js";
 
 export default class Game {
   constructor(width, height) {
+
+    
     this.height = height
     this.width = width
 
 
-
     this.gameTime = 0
+    this.player = new Player(this)
 
     this.camera = new Camera(this, this.player.x, this.player.y, 0, 100)
-    this.player = new Player(this)
    
     this.input = new InputHandler(this)
     this.enemies = new Enemy(this)
@@ -36,11 +38,17 @@ export default class Game {
     this.debug = false
     this.ground = this.height - 100
 
+    this.level = new Level(this)
+
 
     this.platforms = [
-      new Platform(this, 0, this.ground, this.width, 100),
-      new Platform(this, this.width - 200, 280, 200, 20),
-      new Platform(this, 200, 200, 300, 20),
+      new Platform(this, 0, this.ground, 2000, 400),
+      new Platform(this, this.width - 350, 280, 100, 100),
+      new Platform(this, this.width - 50, 280, 100, 100),
+      new Platform(this, this.width - -300, 280, 100, 100),
+      new Platform(this, this.width - -600, 280, 100, 100),
+
+      
     ]
 
   }
