@@ -5,22 +5,7 @@ export default class Player {
   constructor(game) {
 
     this.game = game;
-
-    this.width = 32;
-    this.height = 64;
-
-    this.frameX = 0
-
-    this.x = 50;
-    this.y = 100;
-
-    this.speedX = 0
-    this.speedY = 0
-    this.maxSpeed = 5
-    this.jumpSpeed = 15
-    this.grounded = false
-
-
+    
     const image = new Image()
     image.src = spriteImage
     this.image = image
@@ -34,6 +19,22 @@ export default class Player {
 
 
     this.flip = false
+    
+    this.width = 32;
+    this.height = 64;
+
+    
+
+    this.x = 50;
+    this.y = 100;
+
+    this.speedX = 0
+    this.speedY = 0
+    this.maxSpeed = 5
+    this.jumpSpeed = 15
+    this.grounded = false
+
+
   }
 
 
@@ -91,19 +92,19 @@ export default class Player {
     }
 
     context.drawImage(
-
       this.image,
       this.frameX * this.width,
       this.frameY * this.height - 14,
-      this.width*3,
-      this.height*2,
+      this.width* 3,
+      this.height* 2.2,
       this.flip ? this.x * -1 - this.width : this.x,
       this.y,
-      this.width*2,
-      this.height*2
+    this.width * 1.2,
+      this.height* 2
 
     )
     context.restore()
+  
 
   }
 

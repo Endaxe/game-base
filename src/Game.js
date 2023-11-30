@@ -6,24 +6,25 @@ import Enemy from "./Enemy.js";
 import Platform from "./Platform.js";
 import Camera from "./Camera.js";
 import Level from "./Level.js";
+import Background from "./Background.js";
 
 export default class Game {
   constructor(width, height) {
 
-    
     this.height = height
     this.width = width
-
+    this.input = new InputHandler(this)
+    this.userinterface = new UserInterface(this)
+    this.background = new Background(this)
 
     this.gameTime = 0
     this.player = new Player(this)
 
     this.camera = new Camera(this, this.player.x, this.player.y, 0, 100)
-   
-    this.input = new InputHandler(this)
+
+
     this.enemies = new Enemy(this)
 
-    this.userinterface = new UserInterface(this)
 
     this.enemies = []
     this.enemyTimer = 0
@@ -48,7 +49,7 @@ export default class Game {
       new Platform(this, this.width - -300, 280, 100, 100),
       new Platform(this, this.width - -600, 280, 100, 100),
 
-      
+
     ]
 
   }
@@ -57,7 +58,12 @@ export default class Game {
   update(deltaTime) {
     if (!this.gameOver) {
       this.gameTime += deltaTime
+
+      this.background.update()
       this.player.update(deltaTime)
+      this.camera.update(this.player)
+
+
 
       this.platforms.forEach((platform) => {
         if (this.checkPlatformCollision(this.player, platform)) {
@@ -74,8 +80,6 @@ export default class Game {
       })
     }
 
-    this.player.update(deltaTime)
-    this.camera.update(this.player)
 
 
     if (this.enemyTimer > this.enemyInterval && !this.gameOver) {
@@ -95,6 +99,7 @@ export default class Game {
 
 
   draw(context) {
+    this.background.draw(context)
     this.userinterface.draw(context)
     this.camera.apply(context)
     this.player.draw(context)
@@ -102,6 +107,8 @@ export default class Game {
     this.enemies.forEach((enemy) => enemy.draw(context))
     this.platforms.forEach((platform) => platform.draw(context))
     this.camera.reset(context)
+   
+
 
   }
 

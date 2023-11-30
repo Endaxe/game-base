@@ -93,4 +93,16 @@ jag har börjat lägga till sprites. La till i player klassen. Där bilden impor
 Vad som måste fixas nästa: måste fixa till den så att den passar hitboxenoch storlekarna
 
 
+## 2023-11-13
+Fått bilden och synca med hitboxen men den ser fortfarande lite väl smal ut.
+*Kameran är också trasig sedan förra lektionen, måste fixas.*
+Börjar lite på bakgrund.
 
+## 2023-11-30
+
+Fortsatte med bakgrunden. Skapade layers.js som bestämmer hur bakgrunden ska röra på sig.
+i backgrounds.js la jag till en skyimage och en groundimage och en update och draw function som ska fungera för varje layer.
+
+I game importerades background och en ny instans. LAde till i update och i draw.
+
+*Får inte det och funka, behöver hjälp nästa lektion*

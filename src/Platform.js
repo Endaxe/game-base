@@ -8,7 +8,6 @@ export default class Platform {
 
     }
 
-    update (){}
 
     draw(context){
         context.fillStyle = '#565656'
@@ -22,5 +21,8 @@ export default class Platform {
             context.fillText(`y: ${this.y.toFixed()}`, this.x + 20, this.y - 20)
 
         }
+        
     }
+    update (){}
+
 }
