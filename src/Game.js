@@ -25,7 +25,7 @@ export default class Game {
 
     this.enemies = new Enemy(this)
 
-
+    this.speed = 1
     this.enemies = []
     this.enemyTimer = 0
     this.enemyInterval = 1000
@@ -99,14 +99,14 @@ export default class Game {
 
 
   draw(context) {
-    this.background.draw(context)
-    this.userinterface.draw(context)
+    this.camera.reset(context)
     this.camera.apply(context)
-    this.player.draw(context)
     this.level.draw(context)
     this.enemies.forEach((enemy) => enemy.draw(context))
+    this.background.draw(context)
     this.platforms.forEach((platform) => platform.draw(context))
-    this.camera.reset(context)
+    this.player.draw(context)
+    this.userinterface.draw(context)
    
 
 

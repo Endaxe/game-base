@@ -106,3 +106,10 @@ i backgrounds.js la jag till en skyimage och en groundimage och en update och dr
 I game importerades background och en ny instans. LAde till i update och i draw.
 
 *Får inte det och funka, behöver hjälp nästa lektion*
+
+## 2023-12-04
+
+
+Fick hjälp och nu laddas bilderna in. Först så var laddades dem in i fel dimension och ..
+
+Har börjat med pillar ska sedan få allt och passa in med varandra
