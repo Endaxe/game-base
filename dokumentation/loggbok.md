@@ -113,3 +113,9 @@ I game importerades background och en ny instans. LAde till i update och i draw.
 Fick hjälp och nu laddas bilderna in. Först så var laddades dem in i fel dimension och ..
 
 Har börjat med pillar ska sedan få allt och passa in med varandra
+
+## 2023-12-07
+
+Fixade local hosting
+
+Fixade offset för X och Y för lager och flyttade pillars till rätt position

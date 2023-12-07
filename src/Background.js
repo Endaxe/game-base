@@ -18,7 +18,7 @@ export default class Background {
     
     const pillar = new Image()
     pillar.src = pillarImage
-    this.pillarLayer = new Layer(this.game, pillar, 200, 400, 0)
+    this.pillarLayer = new Layer(this.game, pillar, 200, 400, 0, 180, 395)
     
     this.layers = [
       this.skyLayer,

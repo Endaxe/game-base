@@ -99,13 +99,13 @@ export default class Game {
 
 
   draw(context) {
+    this.level.draw(context)
+    this.platforms.forEach((platform) => platform.draw(context))
+    this.background.draw(context)
+    this.player.draw(context)
+    this.enemies.forEach((enemy) => enemy.draw(context))
     this.camera.reset(context)
     this.camera.apply(context)
-    this.level.draw(context)
-    this.enemies.forEach((enemy) => enemy.draw(context))
-    this.background.draw(context)
-    this.platforms.forEach((platform) => platform.draw(context))
-    this.player.draw(context)
     this.userinterface.draw(context)
    
 
