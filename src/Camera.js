@@ -5,16 +5,19 @@ export default class Camera {
         this.x = x
         this.y = y
         this.width = this.game.width
-        this.height = this.height
+        this.height = this.game.height
         this.minX = minX
         this.minY = minY
         this.lerpFactor = lerpFactor
     }
-
+    
     update(player) {
+        // console.log(this.x, this.y)
+        // console.log(player)
         const halfWidth = this.width / 2
         const halfHeight = this.height / 2
         const maxX = this.game.level.width
+
 
         let targetX = Math.min(Math.max(player.x - halfWidth, this.minX), maxX)
 
@@ -28,6 +31,7 @@ export default class Camera {
     apply(context) {
         context.save()
         context.translate(-this.x, -this.y)
+        // console.log(this.x, this.y)
     }
 
     reset(context) {

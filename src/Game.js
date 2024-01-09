@@ -63,8 +63,6 @@ export default class Game {
       this.player.update(deltaTime)
       this.camera.update(this.player)
 
-
-
       this.platforms.forEach((platform) => {
         if (this.checkPlatformCollision(this.player, platform)) {
           this.player.speedY = 0
@@ -99,15 +97,15 @@ export default class Game {
 
 
   draw(context) {
+    this.camera.apply(context)
     this.level.draw(context)
     this.platforms.forEach((platform) => platform.draw(context))
     this.background.draw(context)
-    this.player.draw(context)
     this.enemies.forEach((enemy) => enemy.draw(context))
+    this.player.draw(context)
     this.camera.reset(context)
-    this.camera.apply(context)
     this.userinterface.draw(context)
-   
+
 
 
   }
